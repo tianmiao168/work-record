@@ -1,0 +1,76 @@
+
+@import '~@/style/var.less';
+
+@cur-zindex: @z-index + 1;
+
+.module-flowchart {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  // background-color: antiquewhite;
+
+  .pane_root_hook {
+    width: 100%;
+    height: 100%;
+    // background-color: rgb(215, 165, 179);
+    // 左侧可拖动添加节点模块
+    .pane_stencil_hook {
+      position: relative;
+      // width: 100%; // 由initialSize定义
+      height: 100%;
+      // background-color: rgb(126, 108, 85);
+      // 内容
+      // .stencil_wrap {
+      //   .x6-widget-stencil-group-content {
+      //     height: 400px;
+      //   }
+      // }
+    }
+    // 右侧 流程图 canvas 模块
+    .pane_paint_hook {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      // background-color: rgb(243, 204, 154);
+    }
+  }
+  // 图内操作工具条
+  .draw_graph {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 32px;
+    z-index: 1;
+    // background-color: rgb(21, 142, 178);
+  }
+  // 图内操作工具条
+  .draw_toolbar {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 365px;
+    height: 32px;
+    line-height: 32px;
+    z-index: @cur-zindex;
+    background-color: #f8f8f8;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    // box-shadow: 1px 1px 3px rgb(243, 243, 243);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.12);
+  }
+  // graph 缩略图
+  .draw_minimap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: @cur-zindex;
+    background-color: rgba(176, 7, 7, 0.12);
+
+    ::v-deep.x6-widget-minimap {
+      background: #0f0f14;
+      box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

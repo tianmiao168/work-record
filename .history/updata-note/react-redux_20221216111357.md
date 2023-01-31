@@ -1,0 +1,29 @@
+```javascript {.line-numbers}
+// ui组件
+const List = () => {
+  // ui组件中触发dispatch
+  insert(newDate);
+  // ui组件中接受state
+  const params = props;
+};
+
+// 将容器中的state映射到ui组件的props中
+const mapStateToProps = (state) => ({
+  state,
+});
+// 在ui中调用store中的dispatch方法
+const mapDispatchToProps = (dispatch) => ({
+  insert: (params) => {
+    dispatch({
+      type: UPDATE_TABS,
+      payload: {
+        operation: "add",
+        data: { ...params },
+      },
+    });
+  },
+});
+
+// container容器组件，DagListUI组件
+export default connect(mapStateToProps, mapDispathToProps)(List);
+```
