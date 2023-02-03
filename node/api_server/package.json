@@ -1,0 +1,15 @@
+{
+  "name": "api_server",
+  "version": "1.0.0",
+  "description": "node后台项目实践",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
