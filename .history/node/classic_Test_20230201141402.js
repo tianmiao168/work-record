@@ -3,7 +3,7 @@ const server = http.createServer();
 server.on("require", function (req, res) {
   // 客户端url
   const url = req.url;
-  // 在此处可以通过判断不同的url来给客户端返回不同的content /**** const content = "<h1>test</h1>";*******
+  // 在此处可以通过判断不同的url来给客户端返回不同的content **** const content = "<h1>test</h1>";*******
   // 客户端请求方法
   const method = req.method;
   // 为了防止中文显示乱码的问题，需要设置响应头
