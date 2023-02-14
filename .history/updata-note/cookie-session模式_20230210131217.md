@@ -1,5 +1,5 @@
 cookie-session 模式
-请求流程：浏览器通过登录认证后，服务器将登陆状态记录在 session 中(sessionId:会话信息)，并返回给浏览器存入 cookie，下次浏览器访问时携带 cookie 向服务端发送请求，服务端会根据 cookie 找到对应的 session 来校验登录状态。(服务器在缓存服务器中存储会话信息)。
+请求流程：浏览器通过登录认证后，服务器将登陆状态记录在 session 中(sessionId:会话信息)，通过响应头 set-cookie 返回给浏览器存入 cookie，下次浏览器访问时携带 cookie 向服务端发送请求，服务端会根据 cookie 找到对应的 session 来校验登录状态。(服务器在缓存服务器中存储会话信息)。
 不同域名时：cookie 不支持跨域，所以 cookie 不会被携带，session 存储在自己的应用中，不会共享。
 解决方法：将 Cookie 的域设置为顶域，即.a.com，path='/',这样所有子域的系统都可以访问到顶域的 Cookie ,可实现 cookie 共享。
 缺点：依赖 cookie,存在单点登录失败的可能
