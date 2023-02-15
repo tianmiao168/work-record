@@ -235,7 +235,7 @@ const tableCallback = (key, id) => {
 const columns = useMemo(() => getColumns(tableCallback), []);
 ```
 
-git merge 和 git rebase 的区别
+## git merge 和 git rebase 的区别
 
 - 在 master 分支上 git merge develop 首先找到祖先分支的 commit，然后将 master 和 develop 的最新 commit 和祖先分支的 commit 合并生成一个新的 commit。
 - 在 master 分支上 git rebase develop,从祖先分支的 commit 开始找 master 的 commit，然后将 master 的所有 commit 指向 develop ，应用到 develop 最新提交的后面，相当于提取了当前分支的修改复制到目标分支的最新提交后。操作会舍弃 master 分支上的 commit
